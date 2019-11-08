@@ -96,7 +96,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <div class="col-md-2">
                                                 <div class="form-group">
                                                     <label for="cep">CEP</label>
-                                                    <input id="cep" name="cep" type="text" class="form-control">
+                                                    <input id="cep" name="cep" type="text" class="form-control cep">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -108,10 +108,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="numero">Número</label>
-                                                    <input id="numero" name="numero" type="text" class="form-control">
+                                                    <!-- DATA serve para limitar minha formatação, ex. os dados só podem ser uma letra e três numeros ou a mascara que eu escolher (A00.0)-->
+                                                    <input id="numero" name="numero" type="text" class="form-control" data-mask="a00.0"> 
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-5">
                                                 <div class="form-group">
                                                     <label for="bairro">Bairro</label>
                                                     <input id="bairro" name="bairro" type="text" class="form-control">
@@ -135,6 +136,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     <input id="ibge" name="ibge" type="text" class="form-control">
                                                 </div>
                                             </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="celular">Celular</label>
+                                                    <!-- Seunda forma de criar mascara, fazendo minha formatação o meu js e add a classe no input-->
+                                                    <input id="celular" name="celular" type="text" class="form-control celular">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="telefoneFixo">Telefone Fixo</label>
+                                                    <!-- segunda forma de mascara com o DATA, criei minha formatação-->
+                                                    <input id="telefoneFixo" name="telefoneFixo" type="text" class="form-control" data-mask="(00) 0000-0000">
+                                                </div>
+                                            </div>
                                         </div>
                                     </form>
                                 </div>
@@ -153,6 +168,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- JavaScript -->
         <?php require_once ("dist/js/javaScript.php"); ?>
+        <script src="dist/js/MyInputMask.js"></script>
+
 </body>
 
 </html>
