@@ -47,8 +47,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="card-header">
                                     <h5 class="card-title">Dados Cadastrais</h5>
                                 </div>
-                                <div class="card-body">
-                                    <form role="form">
+                                <form role="form" name="formCadastrarFornecedor" action="processa_cadastro.php"
+                                    method="POST">
+                                    <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-2">
                                                 <div class="form-group">
@@ -71,104 +72,110 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     <input type="text" class="form-control">
                                                 </div>
                                             </div>
-                                            <div class="col-md-3" id="divNomeRazaoSocial">
+                                            <div class="col-md-3" id="divNomeRazaoSocial" >
                                                 <div class="form-group">
                                                     <label></label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="razaoSocial">
                                                 </div>
                                             </div>
                                             <div class="col-md-3" id="divNomeFantasia">
                                                 <div class="form-group">
                                                     <label></label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control" name="nomeFantasia">
                                                 </div>
                                             </div>
                                             <div class="col-md-2" id="divInscricaoEstadual">
                                                 <div class="form-group">
                                                     <label></label>
-                                                    <input type="text" class="form-control">
+                                                    <input type="text" class="form-control inscricaoEstadual" name="inscricaoEstadual">
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
-                                    <form role="form">
-                                        <div class="row">
-                                            <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <label for="cep">CEP</label>
-                                                    <input id="cep" name="cep" type="text" class="form-control cep">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="logradouro">Logradouro</label>
-                                                    <input id="logradouro" name="logradouro" type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="numero">Número</label>
-                                                    <!-- DATA serve para limitar minha formatação, ex. os dados só podem ser uma letra e três numeros ou a mascara que eu escolher (A00.0)-->
-                                                    <input id="numero" name="numero" type="text" class="form-control" data-mask="a00.0"> 
-                                                </div>
-                                            </div>
-                                            <div class="col-md-5">
-                                                <div class="form-group">
-                                                    <label for="bairro">Bairro</label>
-                                                    <input id="bairro" name="bairro" type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="cidade">Cidade</label>
-                                                    <input id="cidade" name="cidade" type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-1">
-                                                <div class="form-group">
-                                                    <label for="uf">UF</label>
-                                                    <input id="uf" name="uf" type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <label for="ibge">IBGE</label>
-                                                    <input id="ibge" name="ibge" type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <label for="celular">Celular</label>
-                                                    <!-- Seunda forma de criar mascara, fazendo minha formatação o meu js e add a classe no input-->
-                                                    <input id="celular" name="celular" type="text" class="form-control celular">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="form-group">
-                                                    <label for="telefoneFixo">Telefone Fixo</label>
-                                                    <!-- segunda forma de mascara com o DATA, criei minha formatação-->
-                                                    <input id="telefoneFixo" name="telefoneFixo" type="text" class="form-control" data-mask="(00) 0000-0000">
-                                                </div>
+                               
+                    
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="cep">CEP</label>
+                                                <input id="cep" name="cep" type="text" class="form-control cep">
                                             </div>
                                         </div>
-                                    </form>
-                                </div>
-                                <div class="card-footer">
-                                   
-                                </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="logradouro">Logradouro</label>
+                                                <input id="logradouro" name="logradouro" type="text"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="numero">Número</label>
+                                                <!-- DATA serve para limitar minha formatação, ex. os dados só podem ser uma letra e três numeros ou a mascara que eu escolher (A00.0)-->
+                                                <input id="numero" name="numero" type="text" class="form-control"
+                                                    >
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label for="bairro">Bairro</label>
+                                                <input id="bairro" name="bairro" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="cidade">Cidade</label>
+                                                <input id="cidade" name="cidade" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <div class="form-group">
+                                                <label for="uf">UF</label>
+                                                <input id="uf" name="uf" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="ibge">IBGE</label>
+                                                <input id="ibge" name="ibge" type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="celular">Celular</label>
+                                                <!-- Seunda forma de criar mascara, fazendo minha formatação o meu js e add a classe no input-->
+                                                <input id="celular" name="celular" type="text"
+                                                    class="form-control celular">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label for="telefoneFixo">Telefone Fixo</label>
+                                                <!-- segunda forma de mascara com o DATA, criei minha formatação-->
+                                                <input id="telefoneFixo" name="telefoneFixo" type="text"
+                                                    class="form-control" data-mask="(00) 0000-0000">
+                                            </div>
+                                        </div>
+                                    </div>
+
                             </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                <button type="reset" class="btn btn-link">Limpar</button>
+                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <?php require_once ("layout/controlsidebar.php"); ?>
-        <?php require_once ("layout/footer.php"); ?>
+    </div>
+    <?php require_once ("layout/controlsidebar.php"); ?>
+    <?php require_once ("layout/footer.php"); ?>
 
 
-        <!-- JavaScript -->
-        <?php require_once ("dist/js/javaScript.php"); ?>
-        <script src="dist/js/MyInputMask.js"></script>
+    <!-- JavaScript -->
+    <?php require_once ("dist/js/javaScript.php"); ?>
+    <script src="dist/js/MyInputMask.js"></script>
 
 </body>
 
